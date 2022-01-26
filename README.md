@@ -53,7 +53,16 @@ O ARA é um produto tecnológico resultado dos entrelaços teóricos e práticos
  - ReactJS
  - HTML, CSS e JavaScript
 
+
 ## Visão Macro
+
 <div display="block" align="center">
 	<img width="80%" src="https://github.com/diogosaucedo/Acervo-e-Repositorio-ARA/blob/main/assets/Macro-ARA.png?raw=true" />
 </div>
+
+**Ambiente**
+ - Debian
+ - NGINX 
+ - Node.js
+ - PM2
+ - MySQL
