@@ -1,84 +1,59 @@
-# Example app with styled-components
+<div display="block" align="center" >
+	<a href="http://ara.ufmt.ifmt.edu.br/"  target="_blank">
+	<img width="50%" src="https://github.com/diogosaucedo/Acervo-e-Repositorio-ARA/blob/main/assets/ARA_LOGO_4.png?raw=true" />
+	</a>
+</div>
 
-This example features how you use a different styling solution than [styled-jsx](https://github.com/vercel/styled-jsx) that also supports universal styles. That means we can serve the required styles for the first render within the HTML and then load the rest in the client. In this case we are using [styled-components](https://github.com/styled-components/styled-components).
+# Acervo e Repositório ARA
+O ARA nasce com a finalidade de armazenar, preservar e divulgar a memória e a história da formação docente no Centro-Oeste e Norte, em especial realizada no Instituto de Educação da Universidade Federal de Mato Grosso – IE/UFMT e do Instituto Federal de Mato Grosso - IFMT, de modo a possibilitar que os integrantes do grupo de pesquisa disponibilizem informações e documentos históricos para consulta.
 
-For this purpose we are extending the `<Document />` and injecting the server side rendered styles into the `<head>`, and also adding the `babel-plugin-styled-components` (which is required for server side rendering). Additionally we set up a global [theme](https://www.styled-components.com/docs/advanced#theming) for styled-components using NextJS custom [`<App>`](https://nextjs.org/docs/advanced-features/custom-app) component.
+A plataforma cumpre também o papel de comunicar à sociedade as atividades pedagógicas realizadas no IE/UFMT disponibilizando um acervo digital, de fácil acesso a documentos que podem incluir livros digitais em formatos como o electronic PUBlication: ePUB, ou ainda, em Portable Document Format: PDF, artigos científicos especializados, revistas, periódicos, dissertações, teses, textBooks, iconografia, etc.
 
-## Preview
+O ARA é um produto tecnológico resultado dos entrelaços teóricos e práticos da pesquisa, que possibilitará à comunidade a aproximação dos saberes docentes e da tecnologia educacional, cujos conhecimentos são essenciais para o treinamento contínuo de docentes e discentes.
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+- [Mais sobre a minha participação](http://ara.ufmt.ifmt.edu.br/post/acervo-e-repositorio-digital-ara)
+- [Mais sobre o Projeto](http://ara.ufmt.ifmt.edu.br/post/ara)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-styled-components)
+**PROJETO CONCLUÍDO** ✅
 
-## Deploy your own
+**OBS:** Por questões éticas o Back-End **não** faz parte desde repositório. O endpoint GraphQL apenas serve os dados para o NextJS, portanto, não aceita nenhuma entrada de dados.
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+## Front-End
+**Desktop**
+<div display="block" align="center">
+	<img width="80%" src="https://github.com/diogosaucedo/Acervo-e-Repositorio-ARA/blob/main/assets/Front-end%20ARA.gif?raw=true" />
+</div>
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-styled-components&project-name=with-styled-components&repository-name=with-styled-components)
+**Mobile**
 
-## How to use
+<div display="block" align="center">
+	<img width="60%" src="https://github.com/diogosaucedo/Acervo-e-Repositorio-ARA/blob/main/assets/Front-end%20ARA%20mobile.gif?raw=true" />
+</div>
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+**Tecnologias Utilizadas**
 
-```bash
-npx create-next-app --example with-styled-components with-styled-components-app
-# or
-yarn create next-app --example with-styled-components with-styled-components-app
-```
+ - NextJS
+ - ApolloClient
+ - Styled-componets
+ - ReactJS
+ - HTML, CSS e JavaScript
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+## Back-End
 
-### Try it on CodeSandbox
+<div display="block" align="center">
+	<img width="80%" src="https://github.com/diogosaucedo/Acervo-e-Repositorio-ARA/blob/main/assets/Back-end%20ARA.gif?raw=trueraw=true" />
+</div>
 
-[Open this example on CodeSandbox](https://codesandbox.io/s/github/vercel/next.js/tree/canary/examples/with-styled-components)
+**Tecnologias Utilizadas**
 
-### Notes
+ - Strapi
+ - GraphQL
+ - CKEditor5
+ - Styled-componets
+ - ReactJS
+ - HTML, CSS e JavaScript
 
-When wrapping a [Link](https://nextjs.org/docs/api-reference/next/link) from `next/link` within a styled-component, the [as](https://styled-components.com/docs/api#as-polymorphic-prop) prop provided by `styled` will collide with the Link's `as` prop and cause styled-components to throw an `Invalid tag` error. To avoid this, you can either use the recommended [forwardedAs](https://styled-components.com/docs/api#forwardedas-prop) prop from styled-components or use a different named prop to pass to a `styled` Link.
-
-<details>
-<summary>Click to expand workaround example</summary>
-<br />
-
-**components/StyledLink.js**
-
-```javascript
-import Link from 'next/link'
-import styled from 'styled-components'
-
-const StyledLink = ({ as, children, className, href }) => (
-  <Link href={href} as={as} passHref>
-    <a className={className}>{children}</a>
-  </Link>
-)
-
-export default styled(StyledLink)`
-  color: #0075e0;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    color: #40a9ff;
-  }
-
-  &:focus {
-    color: #40a9ff;
-    outline: none;
-    border: 0;
-  }
-`
-```
-
-**pages/index.js**
-
-```javascript
-import StyledLink from '../components/StyledLink'
-
-export default () => (
-  <StyledLink href="/post/[pid]" forwardedAs="/post/abc">
-    First post
-  </StyledLink>
-)
-```
-
-</details>
+## Visão Macro
+<div display="block" align="center">
+	<img width="80%" src="https://github.com/diogosaucedo/Acervo-e-Repositorio-ARA/blob/main/assets/Macro-ARA.png?raw=true" />
+</div>
